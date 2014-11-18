@@ -66,9 +66,9 @@ If you are working with the 0.5.0 Phoenix release or earlier, there will be an e
 get "/", HelloPhoenix.PageController, :index, as: :pages
 ```
 
-Let's digest what this route is telling us. Visiting localhost:4000/ issues an http GET request to the root path. All requests like this will be handled by the "index" function in the "HelloPhoenix.PageController" module defined in `web/controllers/page_controller.ex`.
+Let's digest what this route is telling us. Visiting http://localhost:4000/ issues an http GET request to the root path. All requests like this will be handled by the "index" function in the "HelloPhoenix.PageController" module defined in `web/controllers/page_controller.ex`.
 
-The page we are going to build will simply say "Hello from Phoenix!" when we point our browser to localhost:4000/hello.
+The page we are going to build will simply say "Hello from Phoenix!" when we point our browser to http://localhost:4000/hello.
 
 The first thing we need to do to create that page is define a route for it. Open up `web/router.ex` in your favorite text editor. It should currently look like this.
 
@@ -233,7 +233,7 @@ end
 
 Again, This should be `render conn, "show.html", messenger: messenger` for current Phoenix versions greater than 0.5.0.
 
-There are a couple of things to notice here. We pattern match against the params passed into the show function so that the messenger variable will be bound to the value we put in the :messenger position in the url. For example, if our url is localhost:4000/hello/Frank, the messenger variable would be bound to "Frank".
+There are a couple of things to notice here. We pattern match against the params passed into the show function so that the messenger variable will be bound to the value we put in the :messenger position in the url. For example, if our url is http://localhost:4000/hello/Frank, the messenger variable would be bound to "Frank".
 
 We also pass a third argument into the render function, a key value pair where `:messenger` is the key, and the messenger variable is passed as the value.
 
